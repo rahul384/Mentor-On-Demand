@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 here....
 ![alt text](https://github.com/rahul384/Mentor-On-Demand/tree/master/project/iphone.jpg)
 
+go.......
+![GitHub Logo](/iphone.jpg)
+Format: ![Alt Text](https://github.com/rahul384/Mentor-On-Demand/tree/master/project/iphone.jpg)
+
