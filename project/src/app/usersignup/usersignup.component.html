@@ -1,0 +1,73 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+  
+<form class="form">
+  <div class="container">
+    <h1 style=" margin-left: 100px;"><strong>Sign Up for User</strong></h1>
+    
+    <hr>
+    
+    
+    <label for="username"><b>Username</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="text" [(ngModel)]="signup.userName" class="form-control" placeholder="Enter username" name="userName" id="userName" required></div>
+
+
+
+    <label for="fname"><b>First Name</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="text" [(ngModel)]="signup.firstName" class="form-control" placeholder="Enter First Name" name="firstName" id="firstName" required></div>
+
+    <label for="lname"><b>Last Name</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="text" [(ngModel)]="signup.lastName" class="form-control" placeholder="Enter Last Name" name="lastName" id="lastName" required></div>
+
+ 
+
+    <label for="number"><b>Mobile Number</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-earphone"></i> 
+       </span><input type="text" [(ngModel)]="signup.contactNumber" class="form-control" placeholder="Enter Mobile Number" name="contactNumber" id="contactNumber" required></div>
+
+    <label for="email"><b>Email</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-envelope"></i> 
+       </span><input  [(ngModel)]="signup.emailId" class="form-control" placeholder="Enter Email" name="emailId" id="emailId" required></div>
+
+    <label for="psw"><b>Password</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="password" [(ngModel)]="signup.password" class="form-control" placeholder="Enter Password" name="password" id="password" required></div>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="password" [(ngModel)]="signup.repPassword" class="form-control" placeholder="Repeat Password" name="repPassword" id="repPassword" required></div>
+    
+
+
+    <div>
+      <a routerLink="/userlogin"></a><button class="btn btn-primary" style="padding-bottom: 14px; margin-bottom: 8px;" (click)="createUser()">Sign Up</button>
+      <a href="/usersignup"><button type="button" class="btn btn-light" style="padding-bottom: 14px; margin-bottom: 8px;">Cancel</button></a>
+  
+    </div>
+    <hr>
+  </div>
+</form>
+
+<h4 style=" margin-left: 570px;">Have an account? <a routerLink="/userlogin">Login</a></h4>
+

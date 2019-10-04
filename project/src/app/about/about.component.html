@@ -1,0 +1,98 @@
+
+
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand"  routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        
+                        <li><a routerLink="/home">Home</a></li>
+                       <li><a routerLink="/userlogin">User</a></li>
+                        <li><a routerLink="/trainerlogin">Trainer</a></li>
+                        <li><a routerLink="/adminlogin">Admin</a></li>
+                        
+                      </ul>
+                     
+                    </div>
+                  </nav>
+                 
+                 
+
+
+        <div class="jumbotron jumbotron bg-cover" style="height: 400px; padding-top: 0px">
+            <img class="iimg" src="assets/img/color.jpg">
+                <div class="overlay"></div>
+                <div class="container">
+                
+                        <h1><div class="center">MENTOR ON DEMAND</div></h1>
+                        <h4><div class="center1">"Knowledge Is Power"</div></h4>
+                </div>
+              </div>
+             
+            <hr>
+             <div style="margin-left: 500px;"><h1><strong>Courses We Provide</strong></h1>
+             </div> 
+              <hr>
+          
+
+              <div class="container">
+                <div class="row">
+                 <div class="col-sm-2" *ngFor="let user of technology">
+                 <div class="top">
+                <img class="img1" src="assets/img/class.png">
+                 
+                 <br>
+                   <h4><strong>{{user.techName}}</strong> </h4>
+                   <div *ngIf="showId">
+                      
+                      <div class="card card-body">
+                          <table class="table table-hover table-bordered">
+           
+                  
+                               <tr>
+                                <th>Price :</th>
+                                <td>{{user.price}}</td>
+                               </tr>
+                
+                               <tr>
+                                <th>Duration :</th>
+                                <td>{{user.duration}}</td>
+                               </tr>
+                           </table>
+                      </div>
+                 </div>
+                  
+          
+                 </div>
+                 
+                         
+                 </div>
+               
+               </div>
+              <br>
+               <button type="button" class="btn btn-primary" (click)="toggleId()"><h4> {{ showId ? 'Hide Details' : 'More Details'}}</h4>
+               </button>
+             </div>            
+             
+
+<br>
+
+    <footer id="mu-footer" role="contentinfo">
+                    <div class="container1">
+                        <div class="mu-footer-area">
+                            <div class="mu-footer-top">
+                               
+                            </div>
+                            <div class="mu-footer-bottom">
+                                <p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="http://markups.io">RV</a>. All right reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+     </footer>

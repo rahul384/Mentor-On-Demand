@@ -1,0 +1,71 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"  routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/huser">User</a></li>
+        <li><a routerLink="/trainerlogin">Trainer</a></li>
+        <li><a routerLink="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:22px">
+          <button type="button"  style="margin-bottom:0px;margin-top:9px" class="btn btn-info" onclick='alert("No Notifications!")'>Notifications</button></li>
+          <li style="margin-right:28px">
+          <button class="btn  btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+          
+         
+        <li style="margin-right:10px">
+          <a class="navbar-brand" ><span class="glyphicon glyphicon-user"></span>   {{users}}</a></li>
+        
+          </ul>
+    </div>
+  </nav>
+
+
+<br>
+  <div class="container">
+    <div class="top">
+    <a routerLink="/userprofile"><img class="img1" src="assets/img/user.png"></a>
+    <h1><strong>User Menu</strong></h1>
+    </div>
+    <hr>
+  
+
+     
+
+   <br>
+   <br>
+
+   
+   <div class="row">
+
+    <div class="col-sm-4">
+     <a routerLink="/usersearch"><button type="button" class="btn btn-secondary btn-lg">Search Trainings</button></a>
+
+   </div>
+
+     
+ <div class="col-sm-4">
+     <a routerLink="/usercurrent"><button type="button" class="btn btn-secondary btn-lg">Current Trainings</button></a>
+
+   </div>
+
+<div class="col-sm-4">
+     <a routerLink="/usercompleted"><button type="button" class="btn btn-secondary btn-lg">Completed Trainings</button></a>
+
+   </div>
+
+
+      </div>
+
+

@@ -1,0 +1,90 @@
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"  routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/huser">User</a></li>
+        <li><a routerLink="/trainerlogin">Trainer</a></li>
+        <li><a routerLink="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:22px">
+          <button type="button"  style="margin-bottom:0px;margin-top:9px" class="btn btn-info" onclick='alert("No Notifications!")'>Notifications</button></li>
+          <li style="margin-right:28px">
+          <button class="btn  btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+          
+         
+        <li style="margin-right:10px">
+          <a class="navbar-brand" ><span class="glyphicon glyphicon-user"></span>     {{users}}</a></li>
+        
+          </ul>
+    </div>
+  </nav>
+  <br>
+
+ 
+  <h4 class="modal-title">{{users}}'s Payment Details</h4>
+
+ <div class="modal-body">
+  <table class="table table-striped table-hover table-bordered"  style="width: 80%; margin-left: 10%;">
+    <thead>
+    <tr class="info">
+      <th class="hidden">Id</th>
+      <th>Id</th>
+      <th>Technology Name</th>
+      <th>Mentor Name</th>
+      <th>Amount</th>
+      <th></th>
+     
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of payments"  class="active">
+        <td>{{user.id}}</td>
+      <td>{{user.techName}}</td>
+      <td>{{user.mentorName}}</td>
+      <td>{{user.amount}}</td>
+      <td><button class="btn btn-primary btn-lg"   (click)="getTrainings(user.trainingId,user.amount,user.id)"  > Proceed To Pay</button></td>
+      
+     <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td> -->
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<br><br>
+
+<div *ngIf="showId">      
+<table class="table table-hover table-bordered" style="width: 31%; margin-left: 35%;">
+    <thead>
+        <tr>
+            <th class="hidden">Id </th>
+            <th>Mentor Name</th>
+            <th>Fees To Be Paid</th>
+          
+            <th></th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="hidden">{{trainings.trainingId}}</td>
+                <td>{{trainings.mentor.firstName}} {{trainings.mentor.lastName}}</td>
+                  <td> {{trainings.fees}} </td>
+                <td> <button type="button" class="btn btn-lg btn-success"  style="width:150px;" (click)="Payfees(trainings.fees)" > Pay Fees</button></td>
+            
+              </tr>
+        </tbody>
+</table>
+</div>
+

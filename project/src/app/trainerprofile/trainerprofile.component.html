@@ -1,0 +1,106 @@
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/userlogin">User</a></li>
+        <li><a routerLink="/htrainer">Trainer</a></li>
+        <li><a routerLink="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:22px">
+          <button type="button"  style="margin-bottom:0px;margin-top:9px" class="btn btn-info" onclick='alert("No Notifications!")'>Notifications</button></li>
+          <li style="margin-right:28px">
+          <button class="btn  btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+          
+         
+        <li style="margin-right:10px">
+          <a class="navbar-brand" ><span class="glyphicon glyphicon-user"></span>   {{users}}</a></li>
+        
+          </ul>
+    </div>
+  </nav>
+
+<br>
+
+
+  <div class="container" style="margin-bottom:0px;margin-top:0px">  
+    <div class="row">
+      <div class="col-sm-4">
+         <img class="img1" src="assets/img/trainer.png" style="margin-bottom:0px;margin-top:30px">
+    <h1><strong>Trainer Profile</strong></h1>
+      </div>
+
+     <div class="col-sm-8">
+     
+
+       <div class="modal-body">
+          <table class="table table-hover table-bordered">
+            <tr>
+              <th>Id</th>
+              <td>{{user.id}}</td>
+             </tr>
+
+             <tr>
+               <th>Username</th>
+               <td>{{user.userName}}</td>
+              </tr>
+
+              <tr>
+               <th>First Name</th>
+               <td>{{user.firstName}}</td>
+              </tr>
+
+              <tr>
+               <th>Last Name</th>
+               <td>{{user.lastName}}</td>
+              </tr>
+
+              <tr>
+               <th>Email Id</th>
+               <td>{{user.emailId}}</td>
+              </tr>
+
+              <tr>
+               <th>Contact Number</th>
+               <td>{{user.contactNumber}}</td>
+              </tr>
+
+              <tr>
+               <th>Linkedin Url</th>
+               <td>{{user.linkedinUrl}}</td>
+              </tr>
+
+              <tr>
+               <th>Experience</th>
+               <td>{{user.yearsOf_experience}} Years</td>
+              </tr>
+
+              <tr>
+                <th>Rating</th>
+                <td>{{user.rating}}</td>
+               </tr>
+            
+</table>
+
+        </div>
+
+      </div>
+   
+
+   </div>
+    </div>
+
+   <br>
+   <br>
+
+

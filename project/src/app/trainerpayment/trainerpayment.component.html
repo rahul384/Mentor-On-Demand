@@ -1,0 +1,75 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/userlogin">User</a></li>
+        <li><a routerLink="/htrainer">Trainer</a></li>
+        <li><a routerLink="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:22px">
+          <button type="button"  style="margin-bottom:0px;margin-top:9px" class="btn btn-info" onclick='alert("No Notifications!")'>Notifications</button></li>
+          <li style="margin-right:28px">
+          <button class="btn  btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+          
+         
+        <li style="margin-right:10px">
+          <a class="navbar-brand" ><span class="glyphicon glyphicon-user"></span>   {{users}}</a></li>
+        
+          </ul>
+    </div>
+  </nav>
+
+<br>
+
+ 
+          <h4 class="modal-title"> {{users}}'s Payment Details</h4>
+     
+         <div class="modal-body">
+          <table class="table table-hover table-bordered" style="width: 80%; margin-left: 10%;">
+              <thead>
+                  <tr class="info">
+                    <th class="hidden">Id</th>
+                    <th>Id</th>
+                    <th>Technology Name</th>
+            
+                    <th>Amount To Be Paid</th>
+                    <th>Remarks</th>
+                    <th>Amount Paid</th>
+                    <th></th>
+                   
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let user of payment"  class="active">
+                      <td>{{user.id}}</td>
+                    <td>{{user.techName}}</td>
+            
+          
+                    <td>{{user.amount}}</td>
+                    <td>{{user.remarks}}</td>
+  
+                    <td>{{user.totalAmountToMentor}}</td>
+                    <td><button class="btn btn-primary btn-lg"  (click)="toggleId(user.totalAmountToMentor,user.id)"  > Withdraw Money</button></td>
+                  
+                  
+                  </tr>
+                  </tbody>
+</table><br>
+<div *ngIf="displayId">
+  
+    <input type="text" class="form-group" style="width: 30%; height:60px; margin-left: 35%;"[(ngModel)]="withdrawAmount"  name="Amt" class="form-control" id="Amt" placeholder="Enter amount to be withdrawn">
+       <br>
+<button type="button" class="btn btn-lg btn-success"  style="width: 13%; margin-left: 43%;" (click)="Withdraw(withdrawAmount)" ><span class="glyphicon glyphicon-ok"></span> Withdraw</button>
+    
+</div>
+

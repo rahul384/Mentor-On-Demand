@@ -1,0 +1,96 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/userlogin">User</a></li>
+        <li><a routerLink="/htrainer">Trainer</a></li>
+        <li><a routerLink="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:22px">
+          <button type="button"  style="margin-bottom:0px;margin-top:9px" class="btn btn-info" onclick='alert("No Notifications!")'>Notifications</button></li>
+          <li style="margin-right:28px">
+          <button class="btn  btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+          
+         
+        <li style="margin-right:10px">
+          <a class="navbar-brand" ><span class="glyphicon glyphicon-user"></span>   {{users}}</a></li>
+        
+          </ul>
+    </div>
+  </nav>
+
+<br>
+          <h4 class="modal-title">Edit skills for Trainer</h4>
+     
+         <div class="modal-body">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Skill Name</th>
+                <th>TOC</th>
+                <th>Prerequisites</th>
+                <th> </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of skills">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.toc}}</td>
+                <td>{{user.prerequisites}}</td>
+                <td><button class="btn btn-danger btn-lg" (click)="deleteUser(user)"> Delete Skill</button></td>
+              </tr>
+              </tbody>
+</table>
+        </div>
+
+
+
+<hr>
+        <form class="form">
+          <div class="container">
+            <h1 style=" margin-left: 100px;"><strong>Add Skills</strong></h1>
+            
+            <hr>
+            
+            
+            <label for="name"><b>Skill Name</b></label>
+            <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i> 
+               </span><input type="text" [(ngModel)]="skill.name" class="form-control" placeholder="Enter username" name="name" id="name" required></div>
+        
+        
+        
+            <label for="toc"><b>TOC</b></label>
+            <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i> 
+               </span><input type="text" [(ngModel)]="skill.toc" class="form-control" placeholder="Enter First Name" name="toc" id="toc" required></div>
+        
+            <label for="prerequisites"><b>Prerequisites</b></label>
+            <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i> 
+               </span><input type="text" [(ngModel)]="skill.prerequisites" class="form-control" placeholder="Enter Last Name" name="prerequisites" id="prerequisites" required></div>
+        
+        
+               <div class="add" style="width: 10%; text-align: center;">
+                <button type="button" class="btn btn-info btn-lg"  (click)="createUser()">Add</button>
+              </div>
+      
+          </div>
+        </form>
+
+

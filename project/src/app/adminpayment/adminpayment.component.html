@@ -1,0 +1,112 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"  routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/userlogin">User</a></li>
+        <li><a routerLink="/trainerlogin">Trainer</a></li>
+        <li><a routerLink="/hadmin">Admin</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:28px">
+          <button class="btn btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+        <li style="margin-right:10px">
+          <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span>  {{users}}</a></li>
+         
+       
+        
+          </ul>
+      
+    </div>
+  </nav>
+
+          <h4 class="modal-title">Admin Payment Details</h4>
+     
+         <div class="modal-body">
+          <table class="table table-hover table-bordered">
+              <thead>
+                  <tr class="info">
+                    <th class="hidden">Id</th>
+                    <th>Payment Id</th>
+                    <th>Technology Name</th>
+                    <th>Mentor Name</th>
+                    <th>User Id</th>
+                    <th>Amount Paid By User</th>
+                    <th>Remarks</th>
+                    <th>Transaction Type</th>
+                    <th>Total Amount To Mentor</th>
+                    <th></th>
+                   
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let user of payment"  class="active">
+                      <td>{{user.id}}</td>
+                    <td>{{user.techName}}</td>
+                    <td>{{user.mentorName}}</td>
+                    <td>{{user.userId}}</td>
+                    <td>{{user.amount}}</td>
+                    <td>{{user.remarks}}</td>
+                    <td>{{user.txnType}}</td>
+                    <td>{{user.totalAmountToMentor}}</td>
+                    <td><button class="btn btn-info btn-lg" (click)="getTrainings(user.trainingId,user.amount,user.id)" > View</button></td>
+                    
+                  
+                  </tr>
+                  </tbody>
+</table><br>
+
+<div *ngIf="showId">
+<div class="modal-body">
+    <table class="table table-hover table-bordered" style="width: 60%; margin-left: 19%;">
+        <tr>
+            <th>Payment Id :</th>
+            <th>Progress :</th>
+            <th>Commission % :</th>
+           </tr>
+
+           <tr>
+           
+            <td>{{current.id}}</td>
+            <td>
+                <circle-progress
+                [percent]="current.progress"
+                [radius]="30"
+                [outerStrokeWidth]="10"
+                [innerStrokeWidth]="4"
+                [outerStrokeColor]="'#78C000'"
+                [innerStrokeColor]="'#C7E596'"
+                [animation]="true"
+                [animationDuration]="300"
+              ></circle-progress>
+            </td>
+            <td>{{current.commissionPercent}}</td>
+           </tr>
+           
+       </table>
+       <button class="btn btn-info btn-lg" (click)="setAmount(current.progress,current.commissionPercent)"  style="width: 20%; margin-left: 19%;"> Send Money</button>
+      
+       <button class="btn btn-info btn-lg"  (click)="toggleId()"  style="width: 20%; margin-left: 19%;"> Edit Payment % Commission</button>
+     <br><br>
+
+
+      <div *ngIf="displayId">
+          <input type="text" class="form-group" style="width: 20%; margin-left: 58%;"(ngValue)=current.commissionPercent placeholder="Enter Commission" for="commission" id="commission" [(ngModel)]="commission">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-success"  style="width: 20%; margin-left: 58%;margin-bottom: 2px;"(click)="setCommission(commission,current.id)" ><span class="glyphicon glyphicon-ok"></span> Change Commision</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <br> <button type="button" class="btn btn-danger"  style="width: 20%; margin-left: 58%;"(click)="toggle()" ><span class="glyphicon glyphicon-remove"></span> Cancel</button></div>
+
+</div>
+      </div>
+</div>
+<br>

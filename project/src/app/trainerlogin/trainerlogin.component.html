@@ -1,0 +1,39 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
+
+<br>
+<form class="form">
+  <div class="container">
+    <h1 style=" margin-left: 110px;"><strong>Login for Trainer</strong></h1>
+    
+    <hr>
+
+
+    <label for="username"><b>Username</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="text" [(ngModel)]="user.userName" class="form-control" placeholder="Enter username" name="userName" id="userName" required></div>
+
+    <label for="psw"><b>Password</b></label>
+    <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-user"></i> 
+       </span><input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Enter Password" name="password" id="password" required></div>
+
+    
+
+    <div>
+      <button  class="btn btn-primary" style="padding-bottom: 14px; margin-bottom: 8px;" (click)="authenticate(user.userName,user.password)">Login</button>
+      <a href="/trainerlogin"><button type="button" class="btn btn-light" style="padding-bottom: 14px; margin-bottom: 8px;">Cancel</button></a>
+  
+    </div>
+    <hr></div>
+</form>
+
+<h4 style=" margin-left: 550px;">Doesn't have an account? <a routerLink="/trainersignup">Signup</a></h4>
+

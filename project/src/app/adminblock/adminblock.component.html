@@ -1,0 +1,98 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"  routerLink="/about"><span class="glyphicon glyphicon-link"></span>  RV</a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a routerLink="/home">Home</a></li>
+       <li><a routerLink="/userlogin">User</a></li>
+        <li><a routerLink="/trainerlogin">Trainer</a></li>
+        <li><a routerLink="/hadmin">Admin</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;margin-top:0px" >
+        <li style="margin-right:28px">
+          <button class="btn btn-danger navbar-btn"  style="margin-bottom:0px;margin-top:9px" (click)="logout()">Log-out</button></li>
+        <li style="margin-right:10px">
+          <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span>  {{users}}</a></li>
+         
+       
+        
+          </ul>
+      
+    </div>
+  </nav>
+  
+  <h4 class="modal-title">Remove Users</h4>
+     
+  <div class="modal-body">
+   <table class="table table-hover table-bordered">
+     <thead>
+       <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Contact Number</th>
+        <th>Linkedin Url</th>
+         <th> </th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor="let user of signup">
+        <td>{{user.id}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.emailId}}</td>
+        <td>{{user.contactNumber}}</td>
+        <td>{{user.linkedinUrl}}</td>
+         <td><button class="btn btn-danger btn-lg" (click)="deleteUser(user)"> Delete User</button></td>
+       </tr>
+       </tbody>
+</table>
+ </div>
+
+
+
+<hr>
+
+<h4 class="modal-title">Remove Mentors</h4>
+     
+<div class="modal-body">
+ <table class="table table-hover table-bordered">
+   <thead>
+     <tr>
+      <th>Id</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Contact Number</th>
+        <th>Linkedin Url</th>
+         <th> </th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr *ngFor="let user1 of signupt">
+      <td>{{user1.id}}</td>
+      <td>{{user1.userName}}</td>
+      <td>{{user1.firstName}}</td>
+      <td>{{user1.lastName}}</td>
+      <td>{{user1.emailId}}</td>
+      <td>{{user1.contactNumber}}</td>
+      <td>{{user1.linkedinUrl}}</td>
+       <td><button class="btn btn-danger btn-lg" (click)="deleteUser1(user1)"> Delete Mentor</button></td>
+     </tr>
+     </tbody>
+</table>
+</div>
+
